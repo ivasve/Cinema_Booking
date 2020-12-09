@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+    <title>Cinema_Booking</title>
+  </head>
+  <body>
+    <header>
+    <nav class="navBar">
+    <h1>Tickets Booking</h1>
+    <h3>Today: <span id="date"></span></h3>
+  </nav>
+</header>
+    <main>
+      <form id="bookingForm">
+        <label for="bookingDate" id="labelDate">Choose <strong>Date:</strong></label>
+        <input
+          id="bookingDate"
+          name="bookingDate"
+          type="date"
+          onchange="dateChange()"
+          required
+        /><br /><br />
+
+        <label for="bookingSession" id="labelSession">Choose <strong>Session:</strong></label>
+        <select
+          id="bookingSession"
+          name="bookingSession"
+          onchange="sessionChange()"
+          required
+          disabled
+        >
+          <option value="" selected></option>
+          <option value="10">10:00</option>
+          <option value="12">12:00</option>
+          <option value="14">14:00</option>
+          <option value="16">16:00</option>
+          <option value="18">18:00</option>
+          <option value="20">20:00</option></select
+        ><br /><br />
+        <div id=flexContainer>
+          <div id="singleContainerAvailable">
+            <label for="seatsAvailable"><strong>Available:</strong> &nbsp;</label>
+            <p id="seatsAvailable"></p>            
+          </div>
+          <div id="singleContainerBooked">
+        <label for="seatsBooked">Booked: &nbsp;</label>
+        <p id="seatsBooked"></p>
+      </div>
+      <br><br>
+        </div>
+        <input id="submitFormButton" type="submit" onclick="submitForm(event)" value="BOOK" disabled />
+      </form>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
